@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neuroscan AI - Excellence in Healthcare Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F8FAFC;
+  color: #475569;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 122, 255, 0.15);
+  animation: float 20s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-100px) translateX(50px); }
+  50% { transform: translateY(-50px) translateX(-50px); }
+  75% { transform: translateY(-150px) translateX(100px); }
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #007AFF;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007AFF;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #007AFF;
+  transform: translateY(-2px);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.btn-login {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007AFF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.btn-login:hover {
+  background: rgba(0, 122, 255, 0.2);
+  border-color: #007AFF;
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #0f172a;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 0;
+  min-height: 80vh;
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+@keyframes fadeInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.image-wrapper {
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.image-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 1.5rem;
+  z-index: -1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  background: white;
+  padding: 1rem;
+}
+
+/* Services Section */
+.services {
+  padding: 6rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.service-card {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 122, 255, 0.2);
+  border-color: rgba(0, 122, 255, 0.3);
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: rgba(0, 122, 255, 0.1);
+  color: #007AFF;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+  background: #007AFF;
+  color: white;
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* 🔥 UPDATED LUNG CANCER LINK HERE */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #007AFF;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.3s;
+}
+
+.service-link:hover {
+  gap: 0.75rem;
+}
+
+/* CTA Section */
+
+/* About Section */
+.about {
+  padding: 6rem 0;
+  background: white;
+}
+
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-stats {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 2rem;
+  background: #F8FAFC;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007AFF;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+/* Contact/Footer Section */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 4rem 0 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h3 {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.contact-item .material-icons-outlined {
+  color: #007AFF;
+  font-size: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #007AFF;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 122, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007AFF;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  background: #007AFF;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #334155;
+  padding-top: 2rem;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* Login Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+
+.modal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  animation: slideUp 0.3s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #0f172a;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modal-header h2 {
+  font-size: 1.75rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+  color: #64748b;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #0f172a;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  background: #007AFF;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-submit:hover {
+  background: #0051D5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #64748b;
+}
+
+.form-footer a {
+  color: #007AFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .services-grid {
+    flex-direction: column;
+  }
+
+  .service-card {
+    min-width: 100%;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+}
+</style>
+</head>
+<body>
+<!-- Animated Background -->
+<div class="animated-bg">
+  <div class="gradient-orb" style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,122,255,0.2), transparent); top: 10%; left: 10%;"></div>
+  <div class="gradient-orb" style="width: 500px; height: 500px; background: radial-gradient(circle, rgba(59,130,246,0.15), transparent); bottom: 10%; right: 10%; animation-delay: 2s;"></div>
+</div>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <span class="material-icons-outlined logo-icon">check</span>
+      <span class="logo-text">Neuroscan AI</span>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a class="btn-login" href="#login">Patient Login</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">
+        <span class="material-icons-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Excellence in Healthcare Services</h1>
+      <p>
+        Your scan, decoded by intelligence. AI that spots issues in the brain and lungs. Explains findings in simple, clear visuals. Works fast, delivers trustworthy results. Built to make diagnosis easier and smarter.
+      </p>
+    </div>
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <div class="image-bg"></div>
+        <img alt="dr. checking mri reports" src="https://imgs.search.brave.com/lKKl_BPqqgDahnET3352dp0obmskKSb8cF3zC4MiLzc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODYy/NTYzMTc0L3Bob3Rv/L2RvY3Rvci1icmFp/bi1tcmkuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPU42UGlJ/VWZrMmlabVN4OEpJ/Zm1SYmlqbFJFWEpT/elBrNzYxbDZoSDgw/SVk9"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>AI-Powered Diagnostics</h2>
+      <p>
+        Leveraging artificial intelligence to deliver precise, early detection and superior patient outcomes through advanced medical imaging analysis.
+      </p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Brain Tumor -->
+      <div class="service-card">
+        <div class="service-icon">
+          <span class="material-icons-outlined">psychology</span>
+        </div>
+        <h3>Advanced Brain Tumor Detection</h3>
+        <p>
+          AI-powered MRI analysis that identifies brain tumors, shows the affected area, and gives clear stage and risk details for better understanding.
+        </p>
+        <a class="service-link" href="http://44.209.54.138:8501" target="_blank"></a>
+          Explore Technology
+          <span class="material-icons-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- LUNG CANCER — UPDATED LINK HERE -->
+      <div class="service-card">
+        <div class="service-icon">
+          <span class="material-icons-outlined">settings_suggest</span>
+        </div>
+        <h3>Advanced Lung Cancer Detection</h3>
+        <p>
+          AI-powered analysis that spots lung cancer indicators from X-rays. It shows affected areas, assesses severity, and delivers easy-to-understand results within seconds.
+        </p>
+        <a class="service-link" href="https://huggingface.co/spaces/adi185/lung-cancer-detection" target="_blank">
+          Explore Technology
+          <span class="material-icons-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  </section>
+</div>
+
+<!-- About Us Section - Full Width -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-header">
+      <h2>About Neuroscan AI</h2>
+      <p>
+        Leading the future of medical diagnostics with cutting-edge artificial intelligence technology.
+      </p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Neuroscan AI was founded with a mission to revolutionize healthcare through advanced artificial intelligence. Our team of medical professionals and AI experts work together to create diagnostic tools that save lives through early detection.
+        </p>
+        <p>
+          We believe that every patient deserves access to the most accurate and efficient diagnostic tools available. Our AI-powered systems have been trained on millions of medical images to provide healthcare professionals with reliable second opinions and faster results.
+        </p>
+        <p>
+          With partnerships across leading hospitals and research institutions, we're committed to making advanced healthcare accessible to everyone.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">99.2%</div>
+          <div class="stat-label">Accuracy Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Scans Analyzed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Healthcare Partners</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support Available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact/Footer Section - Full Width -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Neuroscan AI</h3>
+        <p>Excellence in healthcare services powered by artificial intelligence. Making advanced diagnostics accessible to everyone.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <span class="material-icons-outlined">facebook</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <span class="material-icons-outlined">X</span>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <span class="material-icons-outlined">business</span>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <span class="material-icons-outlined">camera_alt</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#services">Our Services</a>
+          <a href="#about">About Us</a>
+          <a href="#" onclick="openLoginModal(event)">Patient Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="contact-item">
+          <span class="material-icons-outlined">location_on</span>
+          <span>123 Medical Plaza, Healthcare District<br>Bengaluru, Karnataka 560001</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-outlined">phone</span>
+          <span>+91 80 1234 5678</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-outlined">email</span>
+          <span>contact@neuroscanai.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons-outlined">schedule</span>
+          <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Neuroscan AI. All rights reserved. | Designed with care for better healthcare.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeLoginModal()">
+      <span class="material-icons-outlined">close</span>
+    </button>
+    <div class="modal-header">
+      <h2>Patient Login</h2>
+      <p>Access your medical records and reports</p>
+    </div>
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="patientId">Patient ID</label>
+        <input type="text" id="patientId" placeholder="Enter your patient ID" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn-submit">Login</button>
+    </form>
+    <div class="form-footer">
+      <a href="#">Forgot Password?</a> | <a href="#">Register New Patient</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Create floating particles
+function createParticles() {
+  const bg = document.querySelector('.animated-bg');
+  const particleCount = 15;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.width = `${Math.random() * 6 + 2}px`;
+    particle.style.height = particle.style.width;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animationDelay = `${Math.random() * 20}s`;
+    particle.style.animationDuration = `${Math.random() * 10 + 15}s`;
+    bg.appendChild(particle);
+  }
+}
+
+// Mobile menu toggle
+function toggleMenu() {
+  const nav = document.querySelector('nav');
+  if (nav.style.display === 'flex') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'flex';
+    nav.style.position = 'absolute';
+    nav.style.top = '100%';
+    nav.style.left = '0';
+    nav.style.right = '0';
+    nav.style.flexDirection = 'column';
+    nav.style.background = '#ffffff';
+    nav.style.padding = '1rem';
+    nav.style.borderRadius = '0.75rem';
+    nav.style.marginTop = '0.5rem';
+  }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#' && href.length > 1) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+// Login Modal Functions
+function openLoginModal(e) {
+  e.preventDefault();
+  document.getElementById('loginModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLoginModal() {
+  document.getElementById('loginModal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  const patientId = document.getElementById('patientId').value;
+  const password = document.getElementById('password').value;
+  
+  if (patientId && password) {
+    alert('Login functionality would be connected to your backend server.\n\nPatient ID: ' + patientId);
+    closeLoginModal();
+  }
+}
+
+// Close modal when clicking outside
+document.getElementById('loginModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeLoginModal();
+  }
+});
+
+// Initialize
+createParticles();
+
+// Add scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.service-card, .section-header').forEach(el => {
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
+
